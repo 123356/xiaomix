@@ -111,10 +111,14 @@ float: left;
 margin-left: 25px;
 text-align: center;
 }
+.daohang:hover .bbottom{
+	display: block;
+}
 .daohang{
 	width: 1226px;
 	height: 100px;
-	
+	/* height: auto; */
+	/* overflow: hidden; */
 	margin: 0  auto;
 }
 .daohang_logo{
@@ -125,15 +129,19 @@ text-align: center;
 	background-color: #FF6700;
 
 }
+
+	
+
+
 .daohang_wenzi{
-	float: left;
+	/* float: left; */
 	margin-left: 189px;
 	color: #3A3A3A;
 	font-size: 15px;
 }
 .daohang_wenzi span/* 后代选择器 */{
 	line-height: 100px;
-	float: left;
+	/* float: left; */
 	padding: 0  10px;
 	/* 光标样式 */cursor:pointer; 
 
@@ -198,11 +206,52 @@ text-align: center;
 
 
 
-   
+ body{
+ 	position: relative;
+ }  
    *{
 	margin: 0;
 padding: 0;
 list-style: none;
+}
+.daohang_wenzi .active{
+	z-index: 22;
+}
+#bbottom .active{
+	z-index: 166;
+	opacity: 0.6;
+	transition: all 2s
+}
+.active{
+	z-index: 150;
+}
+
+#bbottom{
+	width: 1226px;
+	height: 300px;
+	z-index: 999;
+	background-color: white;
+	position: absolute;
+	top: 140px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	opacity: 1;
+	transition: all 1s;
+	overflow: hidden;
+	display: none;
+	
+}
+.bbottom_item .active{
+	z-index: 999;
+}
+.bbottom_item{
+	width: 190px;
+	height: 220px;
+	background-color: white;
+	float: left;
+	margin-right: 10px;
+
 }
 #banner{
 width: 1226px;
@@ -211,12 +260,14 @@ margin: 0 auto;
 position: relative;
 }
 .imgbox{
-	width: 1226px;
+	width: 992px;
 height: 460px;
-position: relative;
+position: absolute;
+top: 0;
+left: 234px;
 }
 .imgbox img{
-	width: 1226px;
+	width: 992px;
 	height: 460px;
 	position: absolute;
 	left: 0;
@@ -308,6 +359,23 @@ background-position: -42px 0;
 
 	/* z-index: -1; */
 }
+.me{
+	width: 795px;
+	height: 460px;
+	display: none;
+	background-color: red;
+	position: absolute;
+	top: 0;
+	left: 234px;
+	z-index: 99;
+	opacity: 0.5;
+	transition:all 2s linear;
+}
+
+.banner_nav li:hover{
+	background-color: #ff6700;
+	
+}
 .banner_nav li{
 	width: 174px;
 	height: 42px;
@@ -316,6 +384,8 @@ background-position: -42px 0;
 	font-size: 14px;
 	color: white;
 	padding: 0 30px;
+	
+	
 }
 .banner_jiantou{
 	float: right;
@@ -626,7 +696,7 @@ border-top:1px solid #FFAC13;
 }
 .neirong_bottom{
 	width: 100%;
-	height: 370px;
+	height: 465px;
 	background-color:#F5F5F5;
 	position: relative;
 }
@@ -635,7 +705,7 @@ border-top:1px solid #FFAC13;
 }
 .nnv_totle{
 	width: 296px;
-	height: 415px;
+	height: 465px;
 	overflow: hidden;
 	position: relative;
 	float: left;
@@ -647,7 +717,7 @@ border-top:1px solid #FFAC13;
 	background-color:#FEFEFE;
 	margin-right: 14px;
 	padding-top: 50px;
-	
+	position: relative;
    float: left;
 
    
@@ -656,7 +726,7 @@ border-top:1px solid #FFAC13;
 	width: 3000px;
 	height: 415px;
 	background-color:#FEFEFE;
-	float: left;
+	
 	
 	
 }
@@ -674,7 +744,7 @@ position: absolute;
 top: 0;
 bottom: 0;
 margin: auto;
-z-index: 2;
+z-index: 88;
 
 }
 .nav_prev{
@@ -704,48 +774,23 @@ left: 0;
 
 }
 .sangedian{
-	width: 100%;
-	padding: 10px;
-	margin-top: 30px;
-	margin-left: 50px;
-	position: relative;
-
-	
-	
-}
-
-.sangedian span{
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background-color: #b0b0b0;
-	
-	float: left;
-	position: absolute;
-	left: 90px;
-	top: 0;
-	bottom: 0;
+	width: 80px;
+	height: 10px;
+	bottom: 50px;
+	left: 0;
+	right: 0;
 	margin: auto;
-
-	
-
-}
-.sangedian a{
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background-color: #b0b0b0;
-	
-	float: left;
 	position: absolute;
-	left: 60px;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-
+	line-height: 10px;
+	text-align: center;
+	z-index: 88;
 	
-
 }
+.sangedian .active{
+	background-color: blue;
+	z-index: 111;
+}
+
 
 .dian_tiaojie2{
 	margin-left: 65px;
@@ -768,18 +813,14 @@ left: 0;
 
 	
 }
-.sangedian h1{
+.sangedian li{
 	width: 6px;
 	height: 6px;
 	border-radius: 50%;
 	color: #ff6700;
 	border: 2px solid #ff6700;
-	
-	position: absolute;
-	left: 30px;
-	top: 0;
-	bottom: 0;
-	margin: auto;
+	float: left;
+	margin-right: 10px;
 }
  .green_haha{
 	color: green;
@@ -818,9 +859,7 @@ left: 0;
 	text-align: center;
 	color: black; 
 }
-.yige{
-	margin-left: 75px;
-}
+
 .zhineng_left{
 	width: 234px;
 	height: 100%;
@@ -868,6 +907,19 @@ left: 0;
 
 
 }
+.bbottom_item{
+	width: 204px;
+	height: 201px;
+	margin-left: 14px;
+	padding-top: 20px;
+   float: left;
+   position: relative;
+}
+.bbottom_item img{
+	width: 160px;
+	height: 110px;
+	border-right: 1px solid #b0b0b0;
+}
 .item2{
 	margin-left: 0px;
 }
@@ -881,19 +933,19 @@ left: 0;
 	display: block;
 
 }
-.zhineng_item  a{
+.zhineng_item  a,.bbottom_item a{
 	display: block;
 	color: #333;
 	text-align: center;
 	margin-top: 18px;
 	font-size: 14px;
 }
-.zhineng_item p{
+.zhineng_item p,.bbottom_item p{
 	font-size: 12px;
 	color: #b0b0b0;
     text-align: center;
 }
- .zhineng_item  h3{
+ .zhineng_item  h3,.bbottom_item h3{
  	color: #ff6700;
  	font-size: 14px;
  	margin-top: 10px;
@@ -1021,7 +1073,8 @@ float: left;
 }
 .tuij_bottom{
 	height: 300px;
-	width: 3000px;
+	width: 10000px;
+	transition: all 2s;
 
 }
 .dapei_2wenzi p{
@@ -1544,18 +1597,12 @@ background-color: rgba(0, 0, 0, .4)
 .nerong_item  img:hover{
 	cursor: pointer;
 }
-.sangedian a:hover{
+.sangedian li:hover{
 	cursor: pointer;
 	background-color: #ff6700;
+	z-index: 88;
 }
-.sangedian span:hover{
-	cursor: pointer;
-	background-color: #ff6700;
-}
-.sangedian i:hover{
-	cursor: pointer;
-	background-color: #ff6700;
-}
+
 .foot_xia_zuo h3:hover{
 	cursor: pointer;
 	color: #ff6700;

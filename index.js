@@ -136,41 +136,75 @@
 	})
 	}
 		cons.forEach(function(ele){
-			for(i=0;i<cons.length;i++){
+			
 				coo(ele);	
-			}
+			
 			})	
 }
 //haha
 {
-let p=document.querySelector(".nav_prev");
-	let nn=document.querySelector(".nav_next");
-	let i=document.querySelector(".content_i");
-	console.log(i);
-	// console.log(p);
-	// console.log(nex);
-
+ 
+	
+	
+	let totle=document.querySelectorAll(".nnv_totle");
 	let n=0;
-	nn.onclick=function(){
-		n++;
-		i.style.marginLeft=-307*n+"px";	
-		if(n===nn.length-1){
-		return;
-		}
 	
-		}
-	
-	p.onclick=function(){
-		n++;
-		i.style.marginLeft=-307*n+"px";
-	while(n===nn.length-1){
+	let obj;
+	function whill(parent){
 		
-		return;
-		}
 		
+		let inv=parent.querySelector(".content_i ");
+		let len=parent.querySelectorAll(".content_i .nerong_item");
+		let left=parent.querySelector(".nav_prev");
+   		let right=parent.querySelector(".nav_next");
+   		let dotted=parent.querySelectorAll(".sangedian li");
+
+	right.onclick=function(ele,index){
+		let l=len.length;
+		n++;
+		if(n===l){
+			n--;
+			return;
+		}		
+		inv.style.marginLeft=-307*n+"px";		
+		dotted[n].classList.add("active");
+		dotted[n-1].classList.remove("active");
+		obj=dotted[n];
+		}
+		console.log(inv.length);
 	
-	}
+				
+		
+			dotted.forEach(function(ele,index){
+				ele.onclick=function(){
+				obj=dotted[n];
+				obj.classList.remove("active");
+				ele.classList.add("active");
+				obj=ele;
+				inv.style.marginLeft=-296*index+"px";
+				n=index;
+
+			}		
+		})
+			
+		
+			
+	left.onclick=function(ele,index){
+		n--;
+		if(n<0){
+			n=0;
+			return;
+		}		
+		inv.style.marginLeft=-307*n+"px";		
+		dotted[n].classList.add("active");
+		dotted[n+1].classList.remove("active");	
+	}	
+	}	
+	totle.forEach(function(ele){
+	whill(ele);
+    })	
 }
+
 //weinituijian
 {
 	let pre=document.querySelector(".btn4");
@@ -205,4 +239,94 @@ let p=document.querySelector(".nav_prev");
 	}
 	inee.style.marginLeft=-1226*n+"px";
 	}
+}
+
+
+
+{
+
+	let lab=document.querySelectorAll(".banner_nav li");
+	let me=document.querySelectorAll(".me");
+	console.log(lab);
+	console.log(me);
+
+	let obj=me[0];
+	lab.forEach(function(ele,index){
+			ele.onmouseenter=function(){
+				obj.style.display="none";
+				me[index].style.display="block";
+				me[index].style.opacity="1";
+				me[index].style.background="#ff6700";
+				obj=me[index];
+				console.log(obj)
+			}
+			ele.onmouseleave=function(){
+				me[index].style.display="none";
+			}
+	})
+
+}
+
+{
+	
+	let box=document.querySelector(".daohang");
+	let top=document.querySelector(".daohang_wenzi");
+	let bbottom=document.querySelector("#bbottom");
+	top.onmouseenter=function(){
+		bbottom.style.height="300px";
+	 bbottom.style.display="block";
+	}
+	box.onmouseleave=function(){
+		bbottom.style.display="none";
+		bbottom.style.height="0";
+		
+	}
+}
+
+//dahang
+{
+
+	const mosh=document.querySelectorAll("#bbottom");
+
+	console.log(mosh);
+	// console.log(down);
+	
+	
+	
+	function mouse(parent){
+		const tit=document.querySelectorAll(".daohang_wenzi span");
+		const change=parent.querySelectorAll(".bbottom_item ");
+		const  img=parent.querySelectorAll("img ");
+		console.log(img);
+		tit.forEach(function(ele,index){
+		ele.onmouseenter=function(){
+			for( let i=0;i<tit.length;i++){
+			tit[i].classList.remove("active");
+		     change.forEach(function(ele){
+			ele.classList.remove("active");
+		     })
+		     img.forEach(function(ele){
+			ele.classList.remove("active");
+		})
+		    
+		 
+		}
+
+		this.classList.add("active");
+		change.forEach(function(ele){
+			ele.classList.add("active");
+		     })
+		ele.classList.add("active");
+		img.forEach(function(ele){
+			ele.classList.add("active");
+		})
+		console.log(mosh[index]);
+	}
+	})
+	}
+		mosh.forEach(function(ele,index){
+			
+				mouse(ele);	
+			
+			})	
 }
