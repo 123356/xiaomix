@@ -143,8 +143,6 @@
 }
 //haha
 {
- 
-	
 	
 	let totle=document.querySelectorAll(".nnv_totle");
 	let n=0;
@@ -256,7 +254,7 @@
 				obj.style.display="none";
 				me[index].style.display="block";
 				me[index].style.opacity="1";
-				me[index].style.background="#ff6700";
+				// me[index].style.background="#ff6700";
 				obj=me[index];
 				console.log(obj)
 			}
@@ -266,67 +264,37 @@
 	})
 
 }
-
+//daohang
 {
 	
-	let box=document.querySelector(".daohang");
-	let top=document.querySelector(".daohang_wenzi");
-	let bbottom=document.querySelector("#bbottom");
-	top.onmouseenter=function(){
-		bbottom.style.height="300px";
-	 bbottom.style.display="block";
-	}
-	box.onmouseleave=function(){
-		bbottom.style.display="none";
-		bbottom.style.height="0";
-		
-	}
-}
+	let box=document.querySelector(".daohang_title");
+	let top=document.querySelectorAll(".daohang_wenzi span");
+	let bbottom=document.querySelectorAll(".bo_tolle #bbottom");
+	let go=document.querySelector(".bo_tolle");
+	console.log(go);
 
-//dahang
-{
-
-	const mosh=document.querySelectorAll("#bbottom");
-
-	console.log(mosh);
-	// console.log(down);
-	
-	
-	
-	function mouse(parent){
-		const tit=document.querySelectorAll(".daohang_wenzi span");
-		const change=parent.querySelectorAll(".bbottom_item ");
-		const  img=parent.querySelectorAll("img ");
-		console.log(img);
-		tit.forEach(function(ele,index){
-		ele.onmouseenter=function(){
-			for( let i=0;i<tit.length;i++){
-			tit[i].classList.remove("active");
-		     change.forEach(function(ele){
-			ele.classList.remove("active");
-		     })
-		     img.forEach(function(ele){
+	top.forEach(function(ele,index){
+		ele.onmouseenter=function(){	
+		go.style.height="240px";
+	 	go.style.display="block";
+	 	go.style.borderTop="1px solid #b0b0b0";
+		// bbottom[index].style.display="block";
+		bbottom.forEach(function(ele){
 			ele.classList.remove("active");
 		})
-		    
-		 
+	  bbottom[index].classList.add("active");
+	  
 		}
 
-		this.classList.add("active");
-		change.forEach(function(ele){
-			ele.classList.add("active");
-		     })
-		ele.classList.add("active");
-		img.forEach(function(ele){
-			ele.classList.add("active");
-		})
-		console.log(mosh[index]);
+
+	box.onmouseleave=function(){
+		go.style.display="none";
+		go.style.height="0";
+		go.style.borderTop="0";
+		 bbottom[index].classList.remove("active");
 	}
 	})
-	}
-		mosh.forEach(function(ele,index){
-			
-				mouse(ele);	
-			
-			})	
+	
 }
+
+

@@ -114,13 +114,30 @@ text-align: center;
 .daohang:hover .bbottom{
 	display: block;
 }
+.daohang_title{
+	width: 100%;
+	height: 100px;
+	position: relative;
+}
+
 .daohang{
 	width: 1226px;
 	height: 100px;
 	/* height: auto; */
 	/* overflow: hidden; */
 	margin: 0  auto;
+	position: relative;
+
+	
 }
+.daohang_r{
+	width: 550px;
+	position: absolute;
+	right: 180px;
+	top: 40px;
+	z-index: 999;
+}
+
 .daohang_logo{
 	width: 55px;
 	height: 55px;
@@ -135,11 +152,15 @@ text-align: center;
 
 .daohang_wenzi{
 	/* float: left; */
+	width: 676px;
 	margin-left: 189px;
 	color: #3A3A3A;
 	font-size: 15px;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
-.daohang_wenzi span/* 后代选择器 */{
+.daohang_wenzi span,.daohang_r span/* 后代选择器 */{
 	line-height: 100px;
 	/* float: left; */
 	padding: 0  10px;
@@ -214,36 +235,48 @@ text-align: center;
 padding: 0;
 list-style: none;
 }
+
+
 .daohang_wenzi .active{
-	z-index: 22;
+	z-index: 666;
 }
-#bbottom .active{
-	z-index: 166;
-	opacity: 0.6;
-	transition: all 2s
+.bo_tolle{
+	width: 100%;
+
+	position: absolute;
+	top: 100px;
+	display: none;
+	background-color: white;
+	z-index: 100;
+	
+	transition: all 2s;
+
+}
+.bo_tolle:hover{
+	transition: all 2s;
 }
 .active{
-	z-index: 150;
+	z-index: 999;
 }
 
-#bbottom{
+#bbottom,.bbottom{
 	width: 1226px;
-	height: 300px;
-	z-index: 999;
+	/* height: 240px; */
+	
 	background-color: white;
 	position: absolute;
-	top: 140px;
 	left: 0;
 	right: 0;
 	margin: auto;
+	
 	opacity: 1;
-	transition: all 1s;
+	transition: all 2s;
 	overflow: hidden;
-	display: none;
+	
 	
 }
-.bbottom_item .active{
-	z-index: 999;
+#bbottom:hover:,.bbottom:hover{
+transition: all 2s;
 }
 .bbottom_item{
 	width: 190px;
@@ -251,7 +284,7 @@ list-style: none;
 	background-color: white;
 	float: left;
 	margin-right: 10px;
-
+	
 }
 #banner{
 width: 1226px;
@@ -359,17 +392,53 @@ background-position: -42px 0;
 
 	/* z-index: -1; */
 }
+.little_picture{
+	width: 265px;
+	height: 76.8px;
+	float: left;
+	font-size: 14px;
+	margin: 30px 10px;
+	line-height: 76.8px;
+	
+
+}
+.little_picture :hover{
+	cursor: pointer;
+	
+}
+.little_picture img{
+	width: 40px;
+	height: 40px;
+	float: left;
+
+}
+.little_picture span{
+	
+	float: left;
+	margin-top: -15px;
+	margin-left: 20px;
+	color: black;
+}
+
+.little_picture span:hover{
+
+	color: #ff6700;
+
+
+}
 .me{
 	width: 795px;
 	height: 460px;
 	display: none;
-	background-color: red;
+	background-color: white;
 	position: absolute;
 	top: 0;
 	left: 234px;
 	z-index: 99;
 	opacity: 0.5;
 	transition:all 2s linear;
+	overflow: hidden;
+
 }
 
 .banner_nav li:hover{
